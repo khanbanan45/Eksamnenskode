@@ -1,5 +1,5 @@
-let G = 6.67430e-11; // Tyngdekonstanten, en universal konstant, som beskriver tyngdekraftens styrke.
-let sol; // Variabel for at gemme solens data
+let G = 6.67430e-11; // Tyngdekonstant
+let sol; // Variabel der gemmer solens data
 let jord; // Variabel til for at gemme Jordens data
 let jordKredsløb = []; // Dette er et array, der skal gemme jordens kredsløb, "jordkredsløb"
 const maksKredsløbPunkter = 30000; // Maks antal punkter i Jordens bane
@@ -10,20 +10,15 @@ const skala = 250 / AU; // Omregningsfaktor fra meter til pixels
 function setup() {
   createCanvas(1000, 800); // Laver et lærred 1000x800 pixels
   
-  // Laver en hastigheds-regulator (slider)
-  slider = createSlider(1, maxTidsskala, 1);
-  slider.position(20, 150); // Placering på skærmen
-  slider.style('width', '200px'); // Bredde
-  
   // Solens egenskaber
   sol = {
-    x: width/2, // X-position (midt på skærmen)
-    y: height/2, // Y-position (midt på skærmen)
+    x: width/2, // X-position 
+    y: height/2, // Y-position 
     diameter: 40, // Størrelse i pixels
-    masse: 1.989e30, // Vægt i kg (meget stor!)
-    vx: 0, // Hastighed i x-retning (0 = står stille)
+    masse: 1.989e30, // Vægt i kg 
+    vx: 0, // Hastighed i x-retning 
     vy: 0, // Hastighed i y-retning
-    farve: [255, 204, 0] // Gul farve (RGB)
+    farve: [255, 204, 0] 
   };
   
   // Jordens egenskaber
@@ -34,6 +29,6 @@ function setup() {
     masse: 5.972e24, // Vægt i kg
     vx: 0, // Start hastighed i x-retning
     vy: -29.78e3 * skala, // Hastighed i y-retning (29.78 km/s)
-    farve: [0, 100, 255] // Blå farve
+    farve: [0, 100, 255] 
   };
 };
